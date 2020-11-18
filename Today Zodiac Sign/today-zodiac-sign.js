@@ -13,8 +13,7 @@ let signs_collection = [
     {"Name": "Capricorn", "StartDate": "12-22", "EndDate": "01-19"}
 ]
 
-//Compara as datas
-const verifica_data_range = (date, start_date, end_date, comparation) => {
+const check_data_range = (date, start_date, end_date, comparation) => {
 
     if (comparation == "and") {
         return (date >= start_date && date <= end_date)
@@ -23,8 +22,7 @@ const verifica_data_range = (date, start_date, end_date, comparation) => {
     }
 }
 
-//Retorna o nome do signo
-const retorna_signo = (signs, date) => {
+const return_zodiac_sign = (signs, date) => {
     
     let year = date.getFullYear()
 
@@ -35,7 +33,7 @@ const retorna_signo = (signs, date) => {
 
         let comparation = sign["StartDate"] == "12-22" ? "or" : "and"
 
-        if (verifica_data_range(date, start_date_sign, end_date_sign, comparation)) {
+        if (check_data_range(date, start_date_sign, end_date_sign, comparation)) {
             return sign["Name"]
         }
 
@@ -45,6 +43,6 @@ const retorna_signo = (signs, date) => {
 
 let date_app = new Date();
 
-const name_sign = retorna_signo(signs_collection, date_app);
+const name_sign = return_zodiac_sign(signs_collection, date_app);
 
 console.log("Today's zodiac sign is: " + name_sign);
