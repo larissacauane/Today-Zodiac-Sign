@@ -6,7 +6,7 @@
  ## :computer: Projeto
  Esse projeto retorna o nome do signo baseado na data atual do sistema.
 
- **Projeto desenvolvido para praticar funções**
+ **Projeto desenvolvido para praticar funções e módulos**
  
  ## :sparkles: Imagens
  
